@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkillTracker</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="logo">
+            Skill<span>Tracker</span>
+        </div>
+
+        <div class="nav-links">
+            <a href="#dashboard">Dashboard</a>
+            <a href="#skills">Skills</a>
+            <a href="#goals">Goals</a>
+            <a href="#daily">Daily Tracker</a>
+        </div>
+    </nav>
+
+
+    <!-- HERO -->
+    <section class="hero">
+        <div>
+            <h1>Track Your Skills.<br>Build Your Future.</h1>
+
+            <p>
+                Manage your skills, learning goals and daily progress
+                in one simple dashboard.
+            </p>
+
+            <button onclick="scrollToSkills()">
+                Start Tracking
+            </button>
+        </div>
+
+        <div class="hero-card">
+            <div class="circle-progress">
+                <span id="overallProgress">0%</span>
+            </div>
+
+            <p>Overall Progress</p>
+        </div>
+    </section>
+
+
+    <!-- DASHBOARD -->
+    <section class="dashboard" id="dashboard">
+
+        <h2>Dashboard</h2>
+
+        <div class="stats">
+
+            <div class="stat-card">
+                <h3 id="totalSkills">0</h3>
+                <p>Total Skills</p>
+            </div>
+
+            <div class="stat-card">
+                <h3 id="completedSkills">0</h3>
+                <p>Completed Skills</p>
+            </div>
+
+            <div class="stat-card">
+                <h3 id="totalGoals">0</h3>
+                <p>Learning Goals</p>
+            </div>
+
+            <div class="stat-card">
+                <h3 id="completedTasks">0</h3>
+                <p>Tasks Completed</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- SKILLS -->
+    <section class="section" id="skills">
+
+        <div class="section-header">
+            <div>
+                <h2>My Skills</h2>
+                <p>Track your learning progress.</p>
+            </div>
+
+            <button onclick="openSkillModal()">
+                + Add Skill
+            </button>
+        </div>
+
+        <div id="skillsContainer" class="skills-grid"></div>
+
+    </section>
+
+
+    <!-- GOALS -->
+    <section class="section" id="goals">
+
+        <div class="section-header">
+            <div>
+                <h2>Learning Goals</h2>
+                <p>Set goals and stay focused.</p>
+            </div>
+
+            <button onclick="openGoalModal()">
+                + Add Goal
+            </button>
+        </div>
+
+        <div id="goalsContainer" class="goals-container"></div>
+
+    </section>
+
+
+    <!-- DAILY TRACKER -->
+    <section class="section" id="daily">
+
+        <div class="section-header">
+            <div>
+                <h2>Daily Learning Tracker</h2>
+                <p>Complete your learning tasks every day.</p>
+            </div>
+
+            <button onclick="openTaskModal()">
+                + Add Task
+            </button>
+        </div>
+
+        <div id="tasksContainer" class="tasks-container"></div>
+
+    </section>
+
+
+    <!-- SKILL MODAL -->
+    <div class="modal" id="skillModal">
+
+        <div class="modal-content">
+
+            <span class="close" onclick="closeSkillModal()">
+                &times;
+            </span>
+
+            <h2>Add Skill</h2>
+
+            <input
+                type="text"
+                id="skillName"
+                placeholder="Skill name (e.g. Java)"
+            >
+
+            <input
+                type="number"
+                id="skillProgress"
+                placeholder="Progress %"
+                min="0"
+                max="100"
+            >
+
+            <button onclick="addSkill()">
+                Add Skill
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- GOAL MODAL -->
+    <div class="modal" id="goalModal">
+
+        <div class="modal-content">
+
+            <span class="close" onclick="closeGoalModal()">
+                &times;
+            </span>
+
+            <h2>Add Learning Goal</h2>
+
+            <input
+                type="text"
+                id="goalName"
+                placeholder="Goal name"
+            >
+
+            <input
+                type="date"
+                id="goalDate"
+            >
+
+            <button onclick="addGoal()">
+                Add Goal
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- TASK MODAL -->
+    <div class="modal" id="taskModal">
+
+        <div class="modal-content">
+
+            <span class="close" onclick="closeTaskModal()">
+                &times;
+            </span>
+
+            <h2>Add Daily Task</h2>
+
+            <input
+                type="text"
+                id="taskName"
+                placeholder="Task (e.g. Practice Java for 1 hour)"
+            >
+
+            <button onclick="addTask()">
+                Add Task
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <footer>
+        <p>© 2026 SkillTracker | Build skills. Build yourself.</p>
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
